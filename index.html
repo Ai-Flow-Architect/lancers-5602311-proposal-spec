@@ -241,134 +241,14 @@
     <h3>図1　病院の1日が、システムでどう流れるか</h3>
     <div class="figure">
       <div class="svg-holder">
-        <svg viewBox="0 0 1600 1020" role="img" aria-label="来院・受付から、入退院の手続き、病室とベッドの割り当て、患者さんの状態の記録、手術と検査の予約、医師と看護師の割り当て、病棟一覧と空床の確認、帳票の出力までの流れを示した図">
-          <defs>
-            <marker id="f1a" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto">
-              <path d="M0,0 L9,4 L0,8 Z" fill="#D4AF37"/>
-            </marker>
-          </defs>
-
-          <!-- 上段4箱: x=60/460/860/1260、y=140、w=330 h=230。印は左上(x+26,y+20)、題名 y+152、補足 y+196 -->
-          <g class="node" tabindex="0" data-name="来院・受付" data-tip="氏名・生年月日・過去の入院歴から検索します。新規の方はその場で登録できます。過去の記録は消さずに履歴として残します。">
-            <rect class="box" x="60" y="140" width="330" height="230" rx="10" fill="#111825" stroke="#4A586B" stroke-width="2"/>
-            <g transform="translate(86,160)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></g>
-            <text x="86" y="292" fill="#F2F4F7" font-size="30" font-weight="700">来院・受付</text>
-            <text x="86" y="336" fill="#C3CDD9" font-size="26">情報を1画面で呼ぶ</text>
-          </g>
-          <g class="node" tabindex="0" data-name="入院・退院・転院の手続き" data-tip="入院・退院・転院を同じ画面から登録します。誰がいつ手続きしたかが残るので、紙の台帳と二重に持つ必要がなくなります。">
-            <rect class="box" x="460" y="140" width="330" height="230" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/>
-            <g transform="translate(486,160)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/></svg></g>
-            <text x="486" y="292" fill="#F2F4F7" font-size="30" font-weight="700">① 入退院の手続き</text>
-            <text x="486" y="336" fill="#C3CDD9" font-size="26">履歴を残して記録</text>
-          </g>
-          <g class="node" tabindex="0" data-name="病室・ベッドの割り当て" data-tip="病棟・病室・ベッドを図で並べ、空き・使用中・清掃中を色で分けます。二重に割り当てようとすると登録できません。">
-            <rect class="box" x="860" y="140" width="330" height="230" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/>
-            <g transform="translate(886,160)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></g>
-            <text x="886" y="292" fill="#F2F4F7" font-size="30" font-weight="700">② 病室・ベッド</text>
-            <text x="886" y="336" fill="#C3CDD9" font-size="26">空きがひと目で分かる</text>
-          </g>
-          <g class="node" tabindex="0" data-name="患者さんの状態の記録" data-tip="患者さんの状態と入院状況を記録します。変更のたびに履歴が積まれるので、後から 「誰がいつ直したか」 をたどれます。">
-            <rect class="box" x="1260" y="140" width="330" height="230" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/>
-            <g transform="translate(1286,160)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg></g>
-            <text x="1286" y="292" fill="#F2F4F7" font-size="30" font-weight="700">③ 状態の記録</text>
-            <text x="1286" y="336" fill="#C3CDD9" font-size="26">誰がいつ直したか残る</text>
-          </g>
-
-          <!-- 下段4箱: y=660。人が見る場所（人の判断が残る箱）だけ stroke を #5FB894 にする -->
-          <g class="node" tabindex="0" data-name="手術・検査・処置の予約" data-tip="手術室・検査機器・時間帯の重複をその場で弾きます。予約の変更も履歴として残します。">
-            <rect class="box" x="60" y="660" width="330" height="230" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/>
-            <g transform="translate(86,680)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></g>
-            <text x="86" y="812" fill="#F2F4F7" font-size="30" font-weight="700">④ 手術・検査の予約</text>
-            <text x="86" y="856" fill="#C3CDD9" font-size="26">重複をその場で確認</text>
-          </g>
-          <g class="node" tabindex="0" data-name="医師・看護師の割り当て" data-tip="担当医師・看護師を予約や病棟に割り当てます。勤務のスケジュールと突き合わせて、重なりを知らせます。">
-            <rect class="box" x="460" y="660" width="330" height="230" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/>
-            <g transform="translate(486,680)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M4 12h7M4 18h4"/><path d="M17 8v10"/><path d="M14 15l3 3 3-3"/></svg></g>
-            <text x="486" y="812" fill="#F2F4F7" font-size="30" font-weight="700">⑤ スタッフの割当</text>
-            <text x="486" y="856" fill="#C3CDD9" font-size="26">担当と勤務を組む</text>
-          </g>
-          <g class="node" tabindex="0" data-name="病棟一覧・空床の確認" data-tip="病棟ごとの患者一覧と空床状況をまとめて表示します。判断そのものは人が行い、システムは材料だけを揃えます。">
-            <rect class="box" x="860" y="660" width="330" height="230" rx="10" fill="#111825" stroke="#5FB894" stroke-width="2.5"/>
-            <g transform="translate(886,680)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3.2"/></svg></g>
-            <text x="886" y="812" fill="#F2F4F7" font-size="30" font-weight="700">⑥ 病棟一覧・空床</text>
-            <text x="886" y="856" fill="#C3CDD9" font-size="26">師長・事務の方が見る</text>
-          </g>
-          <g class="node" tabindex="0" data-name="帳票・レポートの出力" data-tip="必要な帳票をExcel・PDFで出力します。書式は第1期のヒアリングで実物をお預かりし、そのまま再現します。">
-            <rect class="box" x="1260" y="660" width="330" height="230" rx="10" fill="#111825" stroke="#5FB894" stroke-width="2.5"/>
-            <g transform="translate(1286,680)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M10 4v16"/></svg></g>
-            <text x="1286" y="812" fill="#F2F4F7" font-size="30" font-weight="700">⑦ 帳票・レポート</text>
-            <text x="1286" y="856" fill="#C3CDD9" font-size="26">提出できる形で出す</text>
-          </g>
-
-          <path d="M394,255 L450,255" stroke="#D4AF37" stroke-width="3" marker-end="url(#f1a)"/>
-          <path d="M794,255 L850,255" stroke="#D4AF37" stroke-width="3" marker-end="url(#f1a)"/>
-          <path d="M1194,255 L1250,255" stroke="#D4AF37" stroke-width="3" marker-end="url(#f1a)"/>
-          <path d="M1425,374 L1425,450 L225,450 L225,648" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#f1a)"/>
-          <path d="M394,775 L450,775" stroke="#D4AF37" stroke-width="3" marker-end="url(#f1a)"/>
-          <path d="M794,775 L850,775" stroke="#D4AF37" stroke-width="3" marker-end="url(#f1a)"/>
-          <path d="M1194,775 L1250,775" stroke="#D4AF37" stroke-width="3" marker-end="url(#f1a)"/>
-
-          <!-- 注記は、説明したい箱の直下に置く（離すと対応が読み取れない） -->
-          <text x="460" y="416" fill="#9AA7B4" font-size="24">※ 入退院の手続きは、紙の台帳と二重に持たずに済む形にします</text>
-          <text x="860" y="942" fill="#5FB894" font-size="24">緑の枠＝人が見る場所。判断は病院のご担当者様に残ります。</text>
-        </svg>
+        <svg viewBox="0 0 1600 820" role="img" aria-label="来院・受付から入退院、病室とベッド、手術と検査の予約までの4工程と、医師看護師の割当・病棟一覧と空床・帳票の出力という病院の方が毎日見る3画面の関係を示した図"><marker id="h1" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L9,4 L0,8 Z" fill="#D4AF37"/></marker><g class="node" tabindex="0" data-name="来院・受付" data-tip="氏名・生年月日・過去の入院歴から探します。新規の方はその場で登録でき、過去の記録は履歴として残ります。"><rect class="box" x="55" y="110" width="350" height="250" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(81,130)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></g><text x="81" y="290" fill="#F2F4F7" font-size="32" font-weight="700">来院・受付</text><text x="81" y="334" fill="#C3CDD9" font-size="26">情報を1画面で呼ぶ</text></g><g class="node" tabindex="0" data-name="入退院・転院" data-tip="入院・退院・転院を同じ画面から登録します。誰がいつ手続きしたかが残るので、紙の台帳と二重に持つ必要がなくなります。"><rect class="box" x="435" y="110" width="350" height="250" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(461,130)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/></svg></g><text x="461" y="290" fill="#F2F4F7" font-size="32" font-weight="700">入退院・転院</text><text x="461" y="334" fill="#C3CDD9" font-size="26">手続きと履歴を残す</text></g><g class="node" tabindex="0" data-name="病室・ベッド" data-tip="病棟・病室・ベッドを図で並べ、空き・使用中・清掃中を色で分けます。二重の割り当ては登録できません。"><rect class="box" x="815" y="110" width="350" height="250" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(841,130)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></g><text x="841" y="290" fill="#F2F4F7" font-size="32" font-weight="700">病室・ベッド</text><text x="841" y="334" fill="#C3CDD9" font-size="26">空きを図で見て決める</text></g><g class="node" tabindex="0" data-name="手術・検査の予約" data-tip="手術室・検査機器・時間帯の重複をその場で知らせます。予約の変更も履歴として残ります。"><rect class="box" x="1195" y="110" width="350" height="250" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(1221,130)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></g><text x="1221" y="290" fill="#F2F4F7" font-size="32" font-weight="700">手術・検査の予約</text><text x="1221" y="334" fill="#C3CDD9" font-size="26">重複をその場で弾く</text></g><g class="node" tabindex="0" data-name="医師・看護師の割当" data-tip="担当医師・看護師を予約や病棟に割り当てます。勤務のスケジュールと突き合わせて、重なりを知らせます。"><rect class="box" x="60" y="500" width="470" height="230" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(86,520)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M4 12h7M4 18h4"/><path d="M17 8v10"/><path d="M14 15l3 3 3-3"/></svg></g><text x="86" y="660" fill="#F2F4F7" font-size="32" font-weight="700">医師・看護師の割当</text><text x="86" y="704" fill="#C3CDD9" font-size="26">勤務と突き合わせる</text></g><g class="node" tabindex="0" data-name="病棟一覧・空床" data-tip="病棟ごとの患者一覧と空床状況をまとめて表示します。判断そのものは人が行い、システムは材料だけを揃えます。"><rect class="box" x="565" y="500" width="470" height="230" rx="10" fill="#111825" stroke="#5FB894" stroke-width="2.5"/><g transform="translate(591,520)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3.2"/></svg></g><text x="591" y="660" fill="#F2F4F7" font-size="32" font-weight="700">病棟一覧・空床</text><text x="591" y="704" fill="#C3CDD9" font-size="26">師長・事務の方が朝に見る</text></g><g class="node" tabindex="0" data-name="帳票・レポート" data-tip="必要な帳票をExcel・PDFで出力します。書式は第1期に実物をお預かりし、そのまま再現します。"><rect class="box" x="1070" y="500" width="470" height="230" rx="10" fill="#111825" stroke="#5FB894" stroke-width="2.5"/><g transform="translate(1096,520)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M10 4v16"/></svg></g><text x="1096" y="660" fill="#F2F4F7" font-size="32" font-weight="700">帳票・レポート</text><text x="1096" y="704" fill="#C3CDD9" font-size="26">そのまま提出できる形で出す</text></g><path d="M405,235 L425,235" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#h1)"/><path d="M785,235 L805,235" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#h1)"/><path d="M1165,235 L1185,235" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#h1)"/><path d="M1370,362 L1370,430 L295,430 L295,490" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#h1)"/><path d="M530,615 L555,615" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#h1)"/><path d="M1035,615 L1060,615" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#h1)"/><text x="60" y="462" fill="#9AA7B4" font-size="26">※ 上の段は患者さんに起きること、下の段は病院の方が毎日見る画面です</text><text x="565" y="780" fill="#5FB894" font-size="26">緑の枠＝人が見て判断する画面。判断は病院のご担当者様に残ります。</text></svg>
       </div>
     </div>
 
-    <h3>図2　AI・LLMの使いどころを、2つの案で比べて決めます</h3>
+    <h3>図2　AIは「使います」で終わらせず、2案を試して決めます</h3>
     <div class="figure">
       <div class="svg-holder">
-        <svg viewBox="0 0 1600 720" role="img" aria-label="システムに貯まるデータと院内の手順書を材料に、日本語で探す案と入力を助ける案を並べ、第1期に小さく両方を試して決めることを示した図">
-          <defs>
-            <marker id="f2a" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto">
-              <path d="M0,0 L9,4 L0,8 Z" fill="#D4AF37"/>
-            </marker>
-            <marker id="f2b" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto">
-              <path d="M0,0 L9,4 L0,8 Z" fill="#6C7A8C"/>
-            </marker>
-          </defs>
-
-          <g class="node" tabindex="0" data-name="患者さん・予約のデータ" data-tip="システムの中に整理された形で貯まる情報です。AIへ渡すのは、その人が見てよい範囲だけに絞ります。">
-            <rect class="box" x="60" y="60" width="420" height="230" rx="10" fill="#111825" stroke="#8C7526" stroke-width="2"/>
-            <g transform="translate(86,80)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M10 4v16"/></svg></g>
-            <text x="86" y="212" fill="#D4AF37" font-size="28" font-weight="700">システムに貯まるデータ</text>
-            <text x="86" y="256" fill="#C3CDD9" font-size="23">患者情報・入退院・病床・予約</text>
-          </g>
-          <g class="node" tabindex="0" data-name="院内の手順書・マニュアル" data-tip="入退院の手順書や院内の取り決めなど、文章の資料です。AIはここを読んで、質問に日本語で答えます。">
-            <rect class="box" x="60" y="380" width="420" height="230" rx="10" fill="#111825" stroke="#8C7526" stroke-width="2"/>
-            <g transform="translate(86,400)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/></svg></g>
-            <text x="86" y="532" fill="#D4AF37" font-size="28" font-weight="700">院内の手順書</text>
-            <text x="86" y="576" fill="#C3CDD9" font-size="23">文章で書かれた決まりごと</text>
-          </g>
-          <g class="node" tabindex="0" data-name="日本語で聞いて探す" data-tip="「3階の空床は」 「この患者さんの前回の入院は」 のように日本語で聞くと、該当する記録を出して要約します。読む側を助ける案です。">
-            <rect class="box" x="620" y="60" width="380" height="230" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/>
-            <g transform="translate(646,80)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></g>
-            <text x="646" y="212" fill="#F2F4F7" font-size="27" font-weight="700">A案 日本語で聞いて探す</text>
-            <text x="646" y="256" fill="#5FB894" font-size="23">探す時間が短くなる</text>
-          </g>
-          <g class="node" tabindex="0" data-name="入力を助ける" data-tip="入力の途中で候補を出す、書いた内容を要約して別の欄へ回す、といった支援です。書く側を助ける案です。">
-            <rect class="box" x="620" y="380" width="380" height="230" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/>
-            <g transform="translate(646,400)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></g>
-            <text x="646" y="532" fill="#F2F4F7" font-size="27" font-weight="700">B案 入力を助ける</text>
-            <text x="646" y="576" fill="#C3CDD9" font-size="23">書き写しの手間が減る</text>
-          </g>
-          <g class="node" tabindex="0" data-name="第1期に小さく両方試す" data-tip="第1期の中でA案とB案の両方を小さく作り、同じ質問を投げて速さと正しさを比べます。現場の方に触っていただき、速いと感じた方から本番へ載せます。片方で十分と分かれば、もう片方は作りません。">
-            <rect class="box" x="1120" y="175" width="430" height="320" rx="10" fill="rgba(212,175,55,.06)" stroke="#D4AF37" stroke-width="2.5"/>
-            <g transform="translate(1146,195)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4A1.5 1.5 0 0 0 19 19l-5-10V3"/></svg></g>
-            <text x="1146" y="330" fill="#D4AF37" font-size="27" font-weight="700">第1期に小さく両方試します</text>
-            <text x="1146" y="374" fill="#F2F4F7" font-size="23">同じ質問で速さと正しさを比べます</text>
-            <text x="1146" y="418" fill="#C3CDD9" font-size="23">第1期（〜10月17日）の中で行います</text>
-          </g>
-
-          <path d="M486,175 L610,175" stroke="#D4AF37" stroke-width="3" marker-end="url(#f2a)"/>
-          <path d="M486,495 L610,495" stroke="#D4AF37" stroke-width="3" marker-end="url(#f2a)"/>
-          <path d="M486,250 L610,420" stroke="#6C7A8C" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#f2b)"/>
-          <path d="M486,420 L610,250" stroke="#6C7A8C" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#f2b)"/>
-          <path d="M1006,175 L1110,280" stroke="#D4AF37" stroke-width="3" marker-end="url(#f2a)"/>
-          <path d="M1006,495 L1110,400" stroke="#D4AF37" stroke-width="3" marker-end="url(#f2a)"/>
-          <!-- 注記は図の下へ1行（点線と重ねない＝2026-09-17 実測で重なった） -->
-          <text x="80" y="680" fill="#9AA7B4" font-size="24">点線＝比較のために、もう一方の案にも当てて確かめます。</text>
-        </svg>
+        <svg viewBox="0 0 1600 690" role="img" aria-label="第1期に同じ質問20問を用意し、日本語で探すA案と入力を助けるB案の両方に投げて、速い方から本番へ載せることを示した図"><marker id="h2" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L9,4 L0,8 Z" fill="#D4AF37"/></marker><marker id="h2g" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L9,4 L0,8 Z" fill="#5FB894"/></marker><g class="node" tabindex="0" data-name="第1期に用意するもの" data-tip="実際の業務で出る質問を20問だけ選び、A案とB案の両方に同じ問いを投げます。比べる物差しを先に決めるのが目的です。"><rect class="box" x="60" y="200" width="400" height="220" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(86,220)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M10 4v16"/></svg></g><text x="86" y="350" fill="#F2F4F7" font-size="30" font-weight="700">第1期に用意するもの</text><text x="86" y="394" fill="#C3CDD9" font-size="26">同じ質問を20問だけ作ります</text></g><g class="node" tabindex="0" data-name="A案 日本語で聞いて探す" data-tip="「3階の空床は」「この患者さんの前回の入院は」のように日本語で聞くと、該当する記録を出して要約します。"><rect class="box" x="580" y="50" width="440" height="200" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(606,70)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></g><text x="606" y="180" fill="#F2F4F7" font-size="30" font-weight="700">A案 日本語で聞いて探す</text><text x="606" y="224" fill="#C3CDD9" font-size="26">読む側の時間が短くなる</text></g><g class="node" tabindex="0" data-name="B案 入力を助ける" data-tip="入力の途中で候補を出す、書いた内容を要約して別の欄へ回す、といった支援です。書く側を助ける案です。"><rect class="box" x="580" y="370" width="440" height="200" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(606,390)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></g><text x="606" y="500" fill="#F2F4F7" font-size="30" font-weight="700">B案 入力を助ける</text><text x="606" y="544" fill="#C3CDD9" font-size="26">書き写しの手間が減る</text></g><g class="node" tabindex="0" data-name="速い方から本番へ" data-tip="現場の方に両方を触っていただき、速いと感じた方から本番へ載せます。片方で十分と分かれば、もう片方は作りません。"><rect class="box" x="1100" y="200" width="440" height="220" rx="10" fill="#111825" stroke="#5FB894" stroke-width="2.5"/><g transform="translate(1126,220)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6L5 19a1.5 1.5 0 0 0 1.3 2h11.4A1.5 1.5 0 0 0 19 19l-5-10V3"/></svg></g><text x="1126" y="350" fill="#F2F4F7" font-size="30" font-weight="700">速い方から本番へ</text><text x="1126" y="394" fill="#C3CDD9" font-size="26">遅い方は作りません</text></g><path d="M464,280 L570,170" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#h2)"/><path d="M464,350 L570,450" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#h2)"/><path d="M1024,170 L1090,270" fill="none" stroke="#5FB894" stroke-width="3" marker-end="url(#h2g)"/><path d="M1024,450 L1090,350" fill="none" stroke="#5FB894" stroke-width="3" marker-end="url(#h2g)"/><text x="60" y="640" fill="#9AA7B4" font-size="26">※ AIを「使います」で終わらせず、どちらを使うかの決め方までお約束します</text><text x="1100" y="490" fill="#5FB894" font-size="26">第1期（〜10月17日）の中で行います</text></svg>
       </div>
     </div>
   </section>
@@ -380,32 +260,7 @@
     <h3>図3　280万円に入るもの／難しいもの／別途になるもの</h3>
     <div class="figure">
       <div class="svg-holder">
-        <svg viewBox="0 0 1600 800" role="img" aria-label="280万円で入る範囲、難しい範囲、別途になる範囲の3層を示した図">
-          <g class="node" tabindex="0" data-name="入る範囲（280万円）" data-tip="ご依頼文の12項目すべてと、AI・LLMによる日本語検索・要約を含みます。院内PCへの設置作業と、ご担当者様への操作レクチャー（オンライン）も含みます。">
-            <rect class="box" x="60" y="40" width="1480" height="250" rx="10" fill="rgba(212,175,55,.09)" stroke="#D4AF37" stroke-width="3"/>
-            <g transform="translate(96,66)"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg></g>
-            <text x="180" y="112" fill="#D4AF37" font-size="34" font-weight="700">入る範囲</text>
-            <text x="96" y="170" fill="#F2F4F7" font-size="24">患者情報／入退院・転院／病室・ベッドの割当／病棟一覧・空床</text>
-            <text x="96" y="212" fill="#F2F4F7" font-size="24">手術・検査の予約／スタッフの割当／権限管理／操作履歴／帳票／AIの日本語検索</text>
-            <text x="1180" y="112" fill="#D4AF37" font-size="30" font-weight="700">280万円</text>
-            <text x="96" y="256" fill="#5FB894" font-size="24">ご満足いただけなければ全額返金いたします。</text>
-          </g>
-          <g class="node" tabindex="0" data-name="難しい範囲" data-tip="設計をガイドラインに沿わせることはできますが、適合を保証できるのは第三者の監査機関です。現場の例外運用は、実際に伺わないと出てきません。第1期で一覧にし、入る・別途を仕分けます。">
-            <rect class="box" x="60" y="330" width="1480" height="200" rx="10" fill="rgba(224,114,74,.08)" stroke="#E0724A" stroke-width="3"/>
-            <g transform="translate(96,356)"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></g>
-            <text x="180" y="402" fill="#E0724A" font-size="34" font-weight="700">難しい範囲</text>
-            <text x="96" y="460" fill="#F2F4F7" font-size="24">安全管理ガイドラインへの「適合の保証」／現場ごとの例外運用の洗い出し</text>
-            <text x="980" y="402" fill="#E0724A" font-size="24" font-weight="700">第1期のヒアリングで埋めます</text>
-          </g>
-          <g class="node" tabindex="0" data-name="別途になる範囲" data-tip="電子カルテ・レセプトの連携は、相手方の仕様が分かればお見積りできます。監査・認証の取得と、ネットワーク工事・端末調達は当方の担当外です。">
-            <rect class="box" x="60" y="570" width="1480" height="200" rx="10" fill="#111825" stroke="#4A586B" stroke-width="3"/>
-            <g transform="translate(96,596)"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></g>
-            <text x="180" y="642" fill="#9AA7B4" font-size="34" font-weight="700">別途になる範囲</text>
-            <text x="96" y="700" fill="#F2F4F7" font-size="24">電子カルテ・レセプト（診療報酬計算）との連携／医事会計</text>
-            <text x="96" y="742" fill="#9AA7B4" font-size="23">第三者によるセキュリティ監査・認証の取得／院内ネットワーク工事・端末の調達</text>
-            <text x="980" y="642" fill="#C3CDD9" font-size="24" font-weight="700">ご相談のうえお見積りします</text>
-          </g>
-        </svg>
+        <svg viewBox="0 0 1600 640" role="img" aria-label="280万円に入る6項目と、保証まではできない難しい範囲2項目、別途お見積りになる範囲2項目を分けて示した図"><g class="node" tabindex="0" data-name="入る範囲（280万円）" data-tip="ご依頼文の12項目すべてと、AIによる日本語検索・要約を含みます。院内PCへの設置作業と、ご担当者様への操作レクチャー（オンライン）も含みます。"><rect class="box" x="60" y="60" width="700" height="480" rx="10" fill="rgba(212,175,55,.09)" stroke="#D4AF37" stroke-width="3"/><g transform="translate(90,90)"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg></g><text x="170" y="140" fill="#D4AF37" font-size="36" font-weight="700">入る範囲</text><text x="540" y="140" fill="#D4AF37" font-size="34" font-weight="700">280万円</text><text x="90" y="220" fill="#F2F4F7" font-size="26">・患者情報の登録・検索・編集・履歴</text><text x="90" y="262" fill="#F2F4F7" font-size="26">・入院／退院／転院の手続き</text><text x="90" y="304" fill="#F2F4F7" font-size="26">・病棟・病室・ベッドの割り当て</text><text x="90" y="346" fill="#F2F4F7" font-size="26">・手術／検査／処置の予約とスタッフの割当</text><text x="90" y="388" fill="#F2F4F7" font-size="26">・ユーザーごとの権限管理と操作履歴</text><text x="90" y="430" fill="#F2F4F7" font-size="26">・帳票／レポートの出力とAIの日本語検索</text><text x="90" y="500" fill="#5FB894" font-size="26">ご満足いただけなければ全額返金いたします。</text></g><g class="node" tabindex="0" data-name="難しい範囲" data-tip="設計をガイドラインに沿わせることはできますが、適合を保証できるのは第三者の監査機関です。現場の例外運用は実際に伺わないと出てきません。第1期で一覧にし、入る・別途を仕分けます。"><rect class="box" x="820" y="60" width="720" height="220" rx="10" fill="rgba(224,114,74,.08)" stroke="#E0724A" stroke-width="3"/><g transform="translate(850,90)"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></g><text x="930" y="140" fill="#E0724A" font-size="36" font-weight="700">難しい範囲</text><text x="850" y="206" fill="#F2F4F7" font-size="26">・安全管理ガイドラインへの「適合の保証」</text><text x="850" y="248" fill="#F2F4F7" font-size="26">・現場ごとの例外運用の洗い出し</text></g><g class="node" tabindex="0" data-name="別途になる範囲" data-tip="電子カルテ・レセプトの連携は、相手方の仕様が分かればお見積りできます。監査・認証の取得と、ネットワーク工事・端末調達は当方の担当外です。"><rect class="box" x="820" y="320" width="720" height="220" rx="10" fill="#111825" stroke="#4A586B" stroke-width="3"/><g transform="translate(850,350)"><svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></g><text x="930" y="400" fill="#9AA7B4" font-size="36" font-weight="700">別途になる範囲</text><text x="850" y="466" fill="#F2F4F7" font-size="26">・電子カルテ／レセプトとの連携・医事会計</text><text x="850" y="508" fill="#9AA7B4" font-size="26">・第三者監査、院内ネットワーク工事</text></g><text x="60" y="600" fill="#9AA7B4" font-size="26">※ 難しい範囲は第1期のヒアリングで埋め、別途はご相談のうえお見積りします</text></svg>
       </div>
     </div>
 
@@ -425,38 +280,7 @@
     <h3>図4　約4か月の進み方（第1期の終わりで一度ご判断いただけます）</h3>
     <div class="figure">
       <div class="svg-holder">
-        <svg viewBox="0 0 1600 620" role="img" aria-label="約4か月を3つに分け、最初の区切りで一度判断いただけることを示した図">
-          <defs>
-            <marker id="f4a" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto">
-              <path d="M0,0 L9,4 L0,8 Z" fill="#D4AF37"/>
-            </marker>
-          </defs>
-          <g class="node" tabindex="0" data-name="第1期 要件整理・基本設計" data-tip="オンラインミーティングで業務を棚卸しし、機能の優先順位・画面一覧・データ設計・技術構成を決めます。第2期以降の確定見積もここでお出しします。">
-            <rect class="box" x="60" y="60" width="480" height="230" rx="10" fill="rgba(212,175,55,.09)" stroke="#D4AF37" stroke-width="2.5"/>
-            <g transform="translate(86,80)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></g>
-            <text x="86" y="212" fill="#D4AF37" font-size="30" font-weight="700">第1期 要件整理・設計</text>
-            <text x="86" y="256" fill="#C3CDD9" font-size="24">2週間・〜10月17日・300,000円</text>
-          </g>
-          <g class="node" tabindex="0" data-name="第2期 中核の機能" data-tip="患者情報、入退院・転院、病室とベッドの割り当て、病棟一覧と空床、権限管理、操作履歴までを本番で動く形にします。">
-            <rect class="box" x="560" y="60" width="480" height="230" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/>
-            <g transform="translate(586,80)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20V10l6-4 6 4v10"/><path d="M10 20v-5h4v5"/></svg></g>
-            <text x="586" y="212" fill="#F2F4F7" font-size="30" font-weight="700">第2期 中核の機能</text>
-            <text x="586" y="256" fill="#C3CDD9" font-size="24">6週間・〜11月28日・1,200,000円</text>
-          </g>
-          <g class="node" tabindex="0" data-name="第3期 本格導入" data-tip="予約とスタッフの割り当て、帳票の出力、AIの日本語検索を足し、院内PCへ設置して操作レクチャーまで行います。">
-            <rect class="box" x="1060" y="60" width="480" height="230" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/>
-            <g transform="translate(1086,80)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l2-7h14l2 7"/><path d="M12 10V4"/><path d="M8 4h8"/><path d="M3 20h18"/></svg></g>
-            <text x="1086" y="212" fill="#F2F4F7" font-size="30" font-weight="700">第3期 本格導入</text>
-            <text x="1086" y="256" fill="#C3CDD9" font-size="24">5週間・〜1月9日・1,300,000円</text>
-          </g>
-          <path d="M544,175 L552,175" stroke="#D4AF37" stroke-width="3" marker-end="url(#f4a)"/>
-          <path d="M1044,175 L1052,175" stroke="#D4AF37" stroke-width="3" marker-end="url(#f4a)"/>
-          <path d="M300,298 L300,336" stroke="#5FB894" stroke-width="3"/>
-          <path d="M286,336 L314,336 L300,362 Z" fill="#5FB894"/>
-          <text x="90" y="428" fill="#5FB894" font-size="26" font-weight="700">ここで一度ご判断いただけます</text>
-          <text x="90" y="474" fill="#F2F4F7" font-size="24">第1期の成果物（画面一覧・データ設計・確定見積）をご覧のうえ、ここでお止めいただけます。第2期以降のお支払いは発生しません。</text>
-          <text x="90" y="516" fill="#5FB894" font-size="24">ご満足いただけなければ全額返金いたします。</text>
-        </svg>
+        <svg viewBox="0 0 1600 720" role="img" aria-label="第1期の要件整理と設計、第2期の中核機能、第3期の本格導入を階段状に並べ、第1期の終わりで一度判断できることを示した図"><marker id="h4" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L9,4 L0,8 Z" fill="#D4AF37"/></marker><marker id="h4g" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L9,4 L0,8 Z" fill="#5FB894"/></marker><g class="node" tabindex="0" data-name="第1期 要件整理・設計" data-tip="オンラインミーティングで業務を棚卸しし、機能の優先順位・画面一覧・データ設計・技術構成を決めます。第2期以降の確定見積もここでお出しします。"><rect class="box" x="60" y="80" width="440" height="200" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(86,100)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></g><text x="86" y="210" fill="#F2F4F7" font-size="30" font-weight="700">第1期 要件整理・設計</text><text x="86" y="254" fill="#C3CDD9" font-size="26">2週間・〜10月17日・30万円</text></g><g class="node" tabindex="0" data-name="第2期 中核の機能" data-tip="患者情報、入退院・転院、病室とベッドの割り当て、病棟一覧と空床、権限管理、操作履歴までを本番で動く形にします。"><rect class="box" x="560" y="240" width="460" height="200" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(586,260)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20V10l6-4 6 4v10"/><path d="M10 20v-5h4v5"/></svg></g><text x="586" y="370" fill="#F2F4F7" font-size="30" font-weight="700">第2期 中核の機能</text><text x="586" y="414" fill="#C3CDD9" font-size="26">6週間・〜11月28日・120万円</text></g><g class="node" tabindex="0" data-name="第3期 本格導入" data-tip="予約とスタッフの割り当て、帳票の出力、AIの日本語検索を足し、院内PCへ設置して操作レクチャーまで行います。"><rect class="box" x="1080" y="400" width="460" height="200" rx="10" fill="#1B2333" stroke="#D4AF37" stroke-width="2"/><g transform="translate(1106,420)"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l2-7h14l2 7"/><path d="M12 10V4"/><path d="M8 4h8"/><path d="M3 20h18"/></svg></g><text x="1106" y="530" fill="#F2F4F7" font-size="30" font-weight="700">第3期 本格導入</text><text x="1106" y="574" fill="#C3CDD9" font-size="26">5週間・〜1月9日・130万円</text></g><path d="M504,180 L504,340 L550,340" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#h4)"/><path d="M1024,340 L1024,500 L1070,500" fill="none" stroke="#D4AF37" stroke-width="3" marker-end="url(#h4)"/><path d="M280,288 L280,420" stroke="#5FB894" stroke-width="3"/><path d="M264,420 L296,420 L280,450 Z" fill="#5FB894"/><text x="60" y="500" fill="#5FB894" font-size="30" font-weight="700">ここで一度ご判断いただけます</text><text x="60" y="548" fill="#F2F4F7" font-size="26">第1期の成果物（画面一覧・データ設計・確定見積）を</text><text x="60" y="590" fill="#F2F4F7" font-size="26">ご覧のうえ、ここでお止めいただけます。</text><text x="60" y="632" fill="#F2F4F7" font-size="26">第2期以降のお支払いは発生しません。</text><text x="60" y="680" fill="#5FB894" font-size="26">ご満足いただけなければ全額返金いたします。</text></svg>
       </div>
     </div>
 
